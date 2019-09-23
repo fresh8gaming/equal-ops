@@ -40,6 +40,30 @@
         </v-radio-group>
       </v-card-actions>
     </v-card>
+
+    <v-card>
+      <v-card-title>Do you identify as transgender (or another non-cisgender identity)?</v-card-title>
+      <v-card-actions>
+        <v-radio-group v-model="transGroup">
+          <v-radio v-for="trans in transGroups" :key="trans" :label="`${trans}`" :value="trans"></v-radio>
+
+          <v-radio value="Other"></v-radio>
+          <v-text-field :disabled="!transGroup === 'Other'" label="Other"></v-text-field>
+        </v-radio-group>
+      </v-card-actions>
+    </v-card>
+
+    <v-card>
+      <v-card-title>What is your sexual orientation?</v-card-title>
+      <v-card-actions>
+        <v-radio-group v-model="sexidGroup">
+          <v-radio v-for="sexid in sexidGroups" :key="sexid" :label="`${sexid}`" :value="sexid"></v-radio>
+
+          <v-radio value="Other"></v-radio>
+          <v-text-field :disabled="!sexidGroup === 'Other'" label="Other"></v-text-field>
+        </v-radio-group>
+      </v-card-actions>
+    </v-card>
   </v-app>
 </template>
 
@@ -73,7 +97,21 @@ export default {
     ],
 
     genderGroup: "",
-    genderGroups: ["Woman", "Man", "Genderqueer or non-binary", "Agender"]
+    genderGroups: ["Woman", "Man", "Genderqueer or non-binary", "Agender"],
+
+    transGroup: "",
+    transGroups: ["Yes", "No"],
+
+    sexidGroup: "",
+    sexidGroups: [
+      "Asexual",
+      "Bisexual",
+      "Gay",
+      "Heterosexual or straight",
+      "Lesbian",
+      "Pansexual",
+      "Queer"
+    ]
   })
 };
 </script>
