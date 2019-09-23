@@ -64,6 +64,33 @@
         </v-radio-group>
       </v-card-actions>
     </v-card>
+
+    <v-card>
+      <v-card-title>What is your racial or ethnic identity? (Select all that apply)</v-card-title>
+      <v-card-actions>
+        <v-container fluid>
+          <v-checkbox v-for="race in raceGroups" :key="race" :label="`${race}`" :value="race"></v-checkbox>
+          <v-row align="center">
+            <v-checkbox value="Other"></v-checkbox>
+            <v-text-field :disabled="!raceGroup === 'Other'" label="Other"></v-text-field>
+          </v-row>
+        </v-container>
+      </v-card-actions>
+    </v-card>
+
+    <v-card>
+      <v-card-title>Is English your first language?</v-card-title>
+      <v-card-actions>
+        <v-radio-group v-model="languageGroup">
+          <v-radio
+            v-for="language in languageGroups"
+            :key="language"
+            :label="`${language}`"
+            :value="language"
+          ></v-radio>
+        </v-radio-group>
+      </v-card-actions>
+    </v-card>
   </v-app>
 </template>
 
@@ -111,7 +138,23 @@ export default {
       "Lesbian",
       "Pansexual",
       "Queer"
-    ]
+    ],
+
+    raceGroup: "",
+    raceGroups: [
+      "African-British/Black",
+      "East Asian (including Chinese, Japanese, Korean, Mongolian, Tibetan and Taiwanese",
+      "Hispanic/Latinx",
+      "Middle Eastern",
+      "Native American/Alaska Native/First Nations",
+      "Pacific Islander",
+      "South Asian (including Bangladeshi, Bhutanese, Indian, Nepali, Pakistani, and Sri Lankan",
+      "Southeast Asian (including Burmese, Cambodian, Pilipino, Hmong, Indonesian, Laotian, Malaysian, Mien, Singaporean, Thai, and Vietnamese)",
+      "White"
+    ],
+
+    lanuageGroup: "",
+    languageGroups: ["Yes", "No"]
   })
 };
 </script>
