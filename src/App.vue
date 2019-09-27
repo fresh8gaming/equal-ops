@@ -4,14 +4,22 @@
       <v-card-title>How old are you?</v-card-title>
       <v-card-actions>
         <v-radio-group v-model="ageGroup">
-          <v-radio v-for="age in ageGroups" :key="age" :label="`${age}`" :value="age"></v-radio>
+          <v-radio
+            v-for="age in ageGroups"
+            :key="age"
+            :label="`${age}`"
+            :value="age"
+          ></v-radio>
         </v-radio-group>
       </v-card-actions>
     </v-card>
 
     <v-card>
       <v-card-title>What is your tenure in the organisation?</v-card-title>
-      <v-card-text>Please round down, e.g. for 1 year and 10 months, please select 1 year.</v-card-text>
+      <v-card-text
+        >Please round down, e.g. for 1 year and 10 months, please select 1
+        year.</v-card-text
+      >
       <v-card-actions>
         <v-radio-group v-model="tenureGroup">
           <v-radio
@@ -36,19 +44,33 @@
           ></v-radio>
 
           <v-radio value="Other"></v-radio>
-          <v-text-field :disabled="!genderGroup === 'Other'" label="Other"></v-text-field>
+          <v-text-field
+            :disabled="!genderGroup === 'Other'"
+            label="Other"
+          ></v-text-field>
         </v-radio-group>
       </v-card-actions>
     </v-card>
 
     <v-card>
-      <v-card-title>Do you identify as transgender (or another non-cisgender identity)?</v-card-title>
+      <v-card-title
+        >Do you identify as transgender (or another non-cisgender
+        identity)?</v-card-title
+      >
       <v-card-actions>
         <v-radio-group v-model="transGroup">
-          <v-radio v-for="trans in transGroups" :key="trans" :label="`${trans}`" :value="trans"></v-radio>
+          <v-radio
+            v-for="trans in transGroups"
+            :key="trans"
+            :label="`${trans}`"
+            :value="trans"
+          ></v-radio>
 
           <v-radio value="Other"></v-radio>
-          <v-text-field :disabled="!transGroup === 'Other'" label="Other"></v-text-field>
+          <v-text-field
+            :disabled="!transGroup === 'Other'"
+            label="Other"
+          ></v-text-field>
         </v-radio-group>
       </v-card-actions>
     </v-card>
@@ -57,22 +79,41 @@
       <v-card-title>What is your sexual orientation?</v-card-title>
       <v-card-actions>
         <v-radio-group v-model="sexidGroup">
-          <v-radio v-for="sexid in sexidGroups" :key="sexid" :label="`${sexid}`" :value="sexid"></v-radio>
+          <v-radio
+            v-for="sexid in sexidGroups"
+            :key="sexid"
+            :label="`${sexid}`"
+            :value="sexid"
+          ></v-radio>
 
           <v-radio value="Other"></v-radio>
-          <v-text-field :disabled="!sexidGroup === 'Other'" label="Other"></v-text-field>
+          <v-text-field
+            :disabled="!sexidGroup === 'Other'"
+            label="Other"
+          ></v-text-field>
         </v-radio-group>
       </v-card-actions>
     </v-card>
 
     <v-card>
-      <v-card-title>What is your racial or ethnic identity? (Select all that apply)</v-card-title>
+      <v-card-title
+        >What is your racial or ethnic identity? (Select all that
+        apply)</v-card-title
+      >
       <v-card-actions>
         <v-container fluid>
-          <v-checkbox v-for="race in raceGroups" :key="race" :label="`${race}`" :value="race"></v-checkbox>
+          <v-checkbox
+            v-for="race in raceGroups"
+            :key="race"
+            :label="`${race}`"
+            :value="race"
+          ></v-checkbox>
           <v-row align="center">
             <v-checkbox value="Other"></v-checkbox>
-            <v-text-field :disabled="!raceGroup === 'Other'" label="Other"></v-text-field>
+            <v-text-field
+              :disabled="!raceGroup === 'Other'"
+              label="Other"
+            ></v-text-field>
           </v-row>
         </v-container>
       </v-card-actions>
@@ -95,12 +136,15 @@
     <v-card>
       <v-card-title>What language do you speak at home?</v-card-title>
       <v-card-actions>
-        <v-text-field label="language" single-line></v-text-field>
+        <v-text-field label="Language" single-line></v-text-field>
       </v-card-actions>
     </v-card>
 
     <v-card>
-      <v-card-title>Do you consider yourself to have a disability under the Equality Act 2010?</v-card-title>
+      <v-card-title
+        >Do you consider yourself to have a disability under the Equality Act
+        2010?</v-card-title
+      >
       <v-card-actions>
         <v-radio-group v-model="disabilityGroup">
           <v-radio
@@ -114,7 +158,10 @@
     </v-card>
 
     <v-card>
-      <v-card-title>Do you identify with any of the following religions? (Select all that apply)</v-card-title>
+      <v-card-title
+        >Do you identify with any of the following religions? (Select all that
+        apply)</v-card-title
+      >
       <v-card-actions>
         <v-container fluid>
           <v-checkbox
@@ -125,7 +172,10 @@
           ></v-checkbox>
           <v-row align="center">
             <v-checkbox value="Other"></v-checkbox>
-            <v-text-field :disabled="!religionGroup === 'Other'" label="Other"></v-text-field>
+            <v-text-field
+              :disabled="!religionGroup === 'Other'"
+              label="Other"
+            ></v-text-field>
           </v-row>
         </v-container>
       </v-card-actions>
@@ -149,13 +199,21 @@
       <v-card-title>Are you a caretaker of adults?</v-card-title>
       <v-card-actions>
         <v-radio-group v-model="carerGroup">
-          <v-radio v-for="carer in carerGroups" :key="carer" :label="`${carer}`" :value="carer"></v-radio>
+          <v-radio
+            v-for="carer in carerGroups"
+            :key="carer"
+            :label="`${carer}`"
+            :value="carer"
+          ></v-radio>
         </v-radio-group>
       </v-card-actions>
     </v-card>
 
     <v-card>
-      <v-card-title>What is your legal marital or civil partnership status group?</v-card-title>
+      <v-card-title
+        >What is your legal marital or civil partnership status
+        group?</v-card-title
+      >
       <v-card-actions>
         <v-radio-group v-model="maritalGroup">
           <v-radio
@@ -166,7 +224,10 @@
           ></v-radio>
 
           <v-radio value="Other"></v-radio>
-          <v-text-field :disabled="!maritalGroup === 'Other'" label="Other"></v-text-field>
+          <v-text-field
+            :disabled="!maritalGroup === 'Other'"
+            label="Other"
+          ></v-text-field>
         </v-radio-group>
       </v-card-actions>
     </v-card>
@@ -186,7 +247,9 @@
     </v-card>
 
     <v-card>
-      <v-card-title>What is your parents highest level of education?</v-card-title>
+      <v-card-title
+        >What is your parents highest level of education?</v-card-title
+      >
       <v-card-actions>
         <v-radio-group v-model="parentEduGroup">
           <v-radio
@@ -214,7 +277,10 @@
     </v-card>
 
     <v-card>
-      <v-card-title>Have you ever served on active duty in the U.K. Armed Forces?</v-card-title>
+      <v-card-title
+        >Have you ever served on active duty in the U.K. Armed
+        Forces?</v-card-title
+      >
       <v-card-actions>
         <v-radio-group v-model="forcesGroup">
           <v-radio
